@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+body { 
+			 background: rgb(4,4,4);
+			 background: linear-gradient(45deg, rgba(4,4,4,1) 0%, rgba(255,165,0,1) 50%, rgba(4,4,4,1) 100%) no-repeat center fixed;
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			}
+			
+.highlight:hover {
+	color: #ffa500;
+}
+
+.text-orange {
+	color: #ffa500;
+}
+
+.right-border-orange {
+  border-right: 1px solid #ffa500;
+}
+
+.bottom-border-orange {
+  border-bottom: 1px solid #ffa500;
+}
+
+ul {
+	list-style-type: none;
+	}
+	
+a {
+	text-decoration: none;
+	}
+	
+a:hover {
+	color: white;
+	}
+
+table {
+	border: 2px solid #ffa500;
+}

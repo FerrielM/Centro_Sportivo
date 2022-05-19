@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  <definition name="baseLayout" template="/WEB-INF/layout/template/base.jsp">
+    <put-attribute name="title" value="" />
+    <put-attribute name="header" value="/WEB-INF/layout/template/header.jsp" />
+    <put-attribute name="content" value="" />
+    <put-attribute name="footer" value="/WEB-INF/layout/template/footer.jsp" />
+  </definition>
+  
+  <definition name="index" extends="baseLayout">
+    <put-attribute name="title" value="Home" />
+    <put-attribute name="content" value="/WEB-INF/view/index.jsp" />
+  </definition>
+  
+  <!-- <definition name="corsi" extends="baseLayout">
+	    <put-attribute name="title" value="Corsi" />
+	    <put-attribute name="content" value="/WEB-INF/view/corsi.jsp" />
+  </definition>
+  
+  <definition name="abbonamenti" extends="baseLayout">
+	    <put-attribute name="title" value="Abbonamenti" />
+	    <put-attribute name="content" value="/WEB-INF/view/abbonamenti.jsp" />
+  </definition>
+  
+  <definition name="sale" extends="baseLayout">
+	    <put-attribute name="title" value="Sale" />
+	    <put-attribute name="content" value="/WEB-INF/view/sale.jsp" />
+  </definition> -->
+  
+</tiles-definitions>
