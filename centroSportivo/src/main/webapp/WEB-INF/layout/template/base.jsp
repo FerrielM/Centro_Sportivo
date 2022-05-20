@@ -16,13 +16,26 @@
 
 	</head>
 	
-	<body class="d-flex flex-column h-100 text-light g-0">
-		<div class="container-fluid">
+	<body class="d-flex flex-column h-100 text-light g-0 background">
+		<div class="container-fluid g-0">
 			<tiles:insertAttribute name="header"/>
 			<tiles:insertAttribute name="content"/>
 		</div>
 		
 		<tiles:insertAttribute name="footer"/>
-		
+
+
+<script type="text/javascript">
+
+document.getElementById("pagamento").style.display = "none";
+document.getElementById('btn-pagamento').onclick = function () {
+	
+	  if (document.getElementById("pagamento").style.display !== "none") {
+		  document.getElementById("pagamento").style.display = "none";
+		  } else {
+			  document.getElementById("pagamento").style.display = "block";
+		  }
+		};
+</script>
 	</body>
 </html>

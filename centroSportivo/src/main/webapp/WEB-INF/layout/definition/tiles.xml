@@ -13,9 +13,14 @@
     <put-attribute name="content" value="/WEB-INF/view/index.jsp" />
   </definition>
   
-  <!-- <definition name="corsi" extends="baseLayout">
+  <definition name="corsi" extends="baseLayout">
 	    <put-attribute name="title" value="Corsi" />
 	    <put-attribute name="content" value="/WEB-INF/view/corsi.jsp" />
+  </definition>
+  
+    <definition name="corso" extends="baseLayout">
+	    <put-attribute name="title" value="Corso" />
+	    <put-attribute name="content" value="/WEB-INF/view/corso.jsp" />
   </definition>
   
   <definition name="abbonamenti" extends="baseLayout">
@@ -23,9 +28,9 @@
 	    <put-attribute name="content" value="/WEB-INF/view/abbonamenti.jsp" />
   </definition>
   
-  <definition name="sale" extends="baseLayout">
-	    <put-attribute name="title" value="Sale" />
-	    <put-attribute name="content" value="/WEB-INF/view/sale.jsp" />
-  </definition> -->
+  <definition name="cart" extends="baseLayout">
+	    <put-attribute name="title" value="Carrello" />
+	    <put-attribute name="content" value="/WEB-INF/view/cart.jsp" />
+  </definition>
   
 </tiles-definitions>

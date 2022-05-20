@@ -1,8 +1,13 @@
 @charset "ISO-8859-1";
 
-body { 
-			 background: rgb(4,4,4);
-			 background: linear-gradient(45deg, rgba(4,4,4,1) 0%, rgba(255,165,0,1) 50%, rgba(4,4,4,1) 100%) no-repeat center fixed;
+body {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.background { 			 
+			  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) no-repeat center fixed;
 			  -webkit-background-size: cover;
 			  -moz-background-size: cover;
 			  -o-background-size: cover;
@@ -10,19 +15,50 @@ body {
 			}
 			
 .highlight:hover {
-	color: #ffa500;
+	color: #00d2ff;
 }
 
-.text-orange {
-	color: #ffa500;
+.text-jim {
+	color: #00d2ff;
 }
 
 .right-border-orange {
-  border-right: 1px solid #ffa500;
+  border-right: 1px solid #00d2ff;
 }
 
 .bottom-border-orange {
-  border-bottom: 1px solid #ffa500;
+  border-bottom: 1px solid #00d2ff;
+}
+
+.btn-jim {
+	border: 1px solid #eee;
+    color: #fff;
+    background: #eee;
+    background: linear-gradient(90deg, #3a47d5 0%, #00d2ff 100%);
+    font-weight: bold;
+    
+    transition: 0.5s;
+}
+
+.btn-outline-jim {
+    transition: 0.5s;
+}
+
+.btn-outline-jim:hover {
+    background: linear-gradient(90deg, #3a47d5 0%, #00d2ff 100%);
+	opacity: 1;
+}
+
+.btn-check:active+.btn-outline-info, .btn-check:checked+.btn-outline-info, .btn-outline-info.active, .btn-outline-info.dropdown-toggle.show, .btn-outline-info:active {
+    color: #000;
+    background: linear-gradient(90deg, #3a47d5 0%, #00d2ff 100%);
+    border-color: #00d2ff;
+}
+
+.btn-jim:hover {
+	color: #fff;
+	border: 1px solid #0d6efd;
+	opacity: 0.75;
 }
 
 ul {
@@ -37,6 +73,28 @@ a:hover {
 	color: white;
 	}
 
-table {
-	border: 2px solid #ffa500;
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+.carousel-indicators .active {
+	background-color: #00d2ff;
+    opacity: 1;
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    transition: box-shadow .15s ease-in-out;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: #fff;
+}
+
+.table>:not(caption)>*>* {
+    opacity: 0.92;
 }
