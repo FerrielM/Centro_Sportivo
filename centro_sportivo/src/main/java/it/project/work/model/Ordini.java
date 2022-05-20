@@ -1,12 +1,18 @@
 package it.project.work.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,24 +22,31 @@ public class Ordini {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int id;
-
+		
 	@Column(name="data_inizio")
 private Date dataInizio;
 	@Column(name="data_fine")
 private Date dataFine ;
 	@Column(name="totale")
 private double totale;
-		@OneToOne
+	
+	 @ManyToOne(cascade = CascadeType.MERGE)
+	    @JoinColumn(name = "id_user", referencedColumnName = "id_user")
 	    private User user ;
 	    
-		@OneToOne
+	 	@OneToOne(cascade = CascadeType.ALL)
+		@JoinColumn(name = "tipologie_abbonamento_id")
 		private TipologiaAbbonamento abbonamento;
-		 
-	    
-		 
 		
-	 
- 
+		@OneToMany
+		(
+			mappedBy = "corso", 
+			cascade = CascadeType.ALL,
+			fetch = FetchType.EAGER,
+			orphanRemoval = true
+		)
+		private List<Corso> corsi;
+		 
 		public int getId() {
 			return id;
 		}
@@ -81,5 +94,14 @@ private double totale;
 		public void setAbbonamento(TipologiaAbbonamento abbonamento) {
 			this.abbonamento = abbonamento;
 		}
+
+		public List<Corso> getCorsi() {
+			return corsi;
+		}
+
+		public void setCorsi(List<Corso> corsi) {
+			this.corsi = corsi;
+		}
   	 
+		
  }

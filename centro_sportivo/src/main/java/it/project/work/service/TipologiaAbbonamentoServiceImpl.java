@@ -2,16 +2,12 @@ package it.project.work.service;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import it.project.work.dao.TipologiaAbbonamentoDao;
 import it.project.work.model.TipologiaAbbonamento;
-import it.project.work.model.User;
+
 
 @Repository
 public class TipologiaAbbonamentoServiceImpl implements TipologiaAbbonamentoService {

@@ -1,6 +1,8 @@
 package it.project.work.controller;
 
  
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import it.project.work.model.Anagrafica;
- import it.project.work.model.User;
+import it.project.work.model.User;
 import it.project.work.service.TipologiaAbbonamentoServiceImpl;
 import it.project.work.service.UserService;
 @Controller
@@ -52,6 +54,14 @@ return	userService.getUsers().stream().peek(x->System.out.println(x.getAnagrafic
 
 findAny().get().getAnagrafica().getEmail();
  	}
+@ResponseBody
+@GetMapping("/delete")
+
+	public String deleteAbbonamento() {
+	List<User>lista = userService.getUsers();
+    lista.stream().map(x->x.getAbbonamento()).filter(x->x!=null).forEach(x->x.getDescrizione());
+	return null;
+	}
 	
 	
 	

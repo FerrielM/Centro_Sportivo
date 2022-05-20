@@ -64,6 +64,4 @@ public class TipologiaAbbonamento {
 	public void setPrezzo(int prezzo) {
 		this.prezzo = prezzo;
 	}
-	
-    
 }

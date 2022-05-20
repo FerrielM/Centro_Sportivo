@@ -9,12 +9,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 	@Entity
 	@Table(name="corsi")
 	public class Corso {
+		
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="nome")
@@ -22,6 +25,24 @@ import javax.persistence.Table;
 		@Column(name="descrizione")
 		String descrizione;
 	private int id_corso;
+	
+	
+	@OneToMany(
+	mappedBy = "corso", 
+	cascade = CascadeType.ALL,
+	fetch = FetchType.EAGER,
+	orphanRemoval = true)
+	List<Area> area;
+	
+	 @ManyToOne(cascade = CascadeType.MERGE)
+	    @JoinColumn(name = "id_corso", referencedColumnName = "id_corso")
+	private Corso corso;
+	 
+	 @ManyToOne
+	 @JoinColumn(name = "id_ordine", referencedColumnName = "id_ordine")
+	 private Ordini ordine;
+	 
+	 
 	 
 	public int getId_corso() {
 		return id_corso;
@@ -47,12 +68,15 @@ import javax.persistence.Table;
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	@OneToMany(
-	mappedBy = "corso", 
-	cascade = CascadeType.ALL,
-	fetch = FetchType.EAGER,
-	orphanRemoval = true)
-	List<Area> area;
+	
+
+	public Corso getCorso() {
+		return corso;
+	}
+	public void setCorso(Corso corso) {
+		this.corso = corso;
+	}
+
 	
 	
 	
