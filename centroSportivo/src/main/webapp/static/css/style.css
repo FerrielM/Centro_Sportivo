@@ -98,3 +98,20 @@ button:focus:not(:focus-visible) {
 .table>:not(caption)>*>* {
     opacity: 0.92;
 }
+
+.form-check-input {
+	color: fff;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    background-color: fff;
+    border-color: #00d2ff;
+    opacity: 0.5;
+    
+    transition: 0.5s;
+}
+
+.form-check-input:focus, .form-check-input:active, .form-check-input:checked {
+	color: fff;
+    background-color: #00d2ff;
+    border-color: #00d2ff;
+    opacity: 1;
+}
