@@ -1,7 +1,7 @@
 package it.project.work.controller;
 
  
-import java.util.List;
+ 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,22 +46,8 @@ private TipologiaAbbonamentoServiceImpl taService;
      System.out.println(user.getAbbonamento().getDescrizione());
      return null;
 	}
-	
-	@GetMapping("/vedi")
-	@ResponseBody
-	public String vedi() {
-return	userService.getUsers().stream().peek(x->System.out.println(x.getAnagrafica().getNome())).filter(x->x.getAnagrafica().getNome().equals("Ernesto")).
-
-findAny().get().getAnagrafica().getEmail();
- 	}
-@ResponseBody
-@GetMapping("/delete")
-
-	public String deleteAbbonamento() {
-	List<User>lista = userService.getUsers();
-    lista.stream().map(x->x.getAbbonamento()).filter(x->x!=null).forEach(x->x.getDescrizione());
-	return null;
-	}
+	//
+ 	 
 	
 	
 	

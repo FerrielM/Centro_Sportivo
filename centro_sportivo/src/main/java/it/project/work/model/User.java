@@ -1,6 +1,7 @@
 package it.project.work.model;
 
- 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-@Entity
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+ 
+ @Entity
 @Table(name="user")
 public class User {
 	@Id
@@ -29,24 +35,38 @@ public class User {
 	private String username;
 	@Column(name="password")
  	private String password;
-	 @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "id_tipologia_abbonamento", referencedColumnName = "id_tipologia_abbonamento")
+	//NELLA TABELLA USER HO UN ID_TIPOLOGIA_ABBONAMENTO PERCIL DICHIARO UN'OGGETTO QUI
+	 @ManyToOne(cascade = CascadeType.ALL )//, fetch = FetchType.EAGER) // SE NON METTI CASCADE.ALL SI BLOCCA;
+    @JoinColumn(name = "id_tipologia_abbonamento")  // <-- NOME DELLA VARIABILE CHE  IN TIPOLOGIAABBONAMENTO CORRISPONDE ALL'ID
 	private TipologiaAbbonamento abbonato;
-   
-    @Column(name="descrizione")
+	 
+	 @OneToMany(                
+				mappedBy = "user", //MAPPO IL NOME DELLA  VARIABILE PRESENTE IN CLASSE corso <--- è OPZIONALE
+				cascade = CascadeType.ALL,  //SEMPRE ALL IN OneToMany
+				orphanRemoval = true,fetch= FetchType.EAGER) // se rimane un oggetto orfano viene eliminato;
+              private List< Corso> corso;
+	 
+    public TipologiaAbbonamento getAbbonato() {
+		return abbonato;
+	}
+
+	public void setAbbonato(TipologiaAbbonamento abbonato) {
+		this.abbonato = abbonato;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	@Column(name="descrizione")
     String descrizione;
 	public int getId_user() {
 		return id_user;
 	}
-	
-	@OneToMany
-	(
-		mappedBy = "user", 
-		cascade = CascadeType.ALL,
-		fetch = FetchType.EAGER,
-		orphanRemoval = true
-	)
-	private Ordini ordine;
 	
 	public void setId_user(int id_user) {
 		this.id_user = id_user;
@@ -77,6 +97,14 @@ public class User {
 
 	public void setAbbonamento(TipologiaAbbonamento abbonato) {
 		this.abbonato = abbonato;
+	}
+
+	public List<Corso> getCorso() {
+		return corso;
+	}
+
+	public void setCorso(List<Corso> corso) {
+		this.corso = corso;
 	}
 	
  

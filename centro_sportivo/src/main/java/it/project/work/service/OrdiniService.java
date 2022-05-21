@@ -15,8 +15,4 @@ public interface OrdiniService {
 	public void deleteOrdine(Ordini ordine);
 	
 	public void updateOrdine(Ordini ordine);
-	
-	
-	
-
 }

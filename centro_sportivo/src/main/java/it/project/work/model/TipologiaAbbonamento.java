@@ -5,12 +5,14 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
  
 @Entity
@@ -25,11 +27,11 @@ public class TipologiaAbbonamento {
 	private String descrizione;
 	@Column(name="prezzo")
 	public int prezzo;
-	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany    // NON HO MESSO @joinTable  perchè sto user io non lo ho nella tabella di questa classe, 
 	(
-		mappedBy = "abbonato", 
-		cascade = CascadeType.ALL,
-		fetch = FetchType.EAGER,
+		mappedBy = "abbonato",// <-- FACOLTATIVO , LA METTO PERCHè SPECIFICO CHE NELLA CLASSE USER ho una variabile di tipo TipologiaAbb 
+		cascade = CascadeType.ALL, // <----SEMPRE ALL 
 		orphanRemoval = true
 	)
 	private  List<User> user ;
@@ -64,4 +66,6 @@ public class TipologiaAbbonamento {
 	public void setPrezzo(int prezzo) {
 		this.prezzo = prezzo;
 	}
+	
+    
 }
