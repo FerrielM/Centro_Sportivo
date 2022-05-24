@@ -1,0 +1,21 @@
+package it.project.work.dao;
+
+import java.util.List;
+
+import it.project.work.model.Ordine;
+ 
+public interface OrdiniDao {
+
+	
+	public Ordine getOrdiniById(int id);
+	
+	public List<Ordine> getOrdini();
+	
+	public void createOrdini(Ordine ordine);
+	
+	public void deleteOrdine(Ordine ordine);
+	
+	public void updateOrdine(Ordine ordine);
+	
+	
+}
