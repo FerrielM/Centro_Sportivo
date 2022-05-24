@@ -2,9 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<!-- REQUESTSCOPE.ISLOGGATO -->
+
 <div class="container-fluid">
 
-<div id="carouselDark" class="carousel slide shadow" data-bs-ride="carousel">
+<div id="carouselDark" class="carousel slide shadow mb-4" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -67,7 +69,7 @@
   </button>
 </div>
 
-<div class="d-flex flex-row justify-content-evenly align-items-center">
+<div class="mt-5 d-flex flex-row justify-content-evenly align-items-center section">
 <table class="table table-striped table-hover table-dark my-4 w-25 shadow">
 		<thead>
 			<tr>
@@ -151,5 +153,7 @@
 		</tbody>
 	</table>
 </div>
+<div class="section"></div>
 
+<div></div>
 </div>

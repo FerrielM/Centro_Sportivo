@@ -27,15 +27,16 @@
 
 <script type="text/javascript">
 
-document.getElementById("pagamento").style.display = "none";
-document.getElementById('btn-pagamento').onclick = function () {
+ document.getElementById("pagamento").style.display = "none";
+ document.getElementById('btn-pagamento').onclick = function () {
 	
-	  if (document.getElementById("pagamento").style.display !== "none") {
+	   if (document.getElementById("pagamento").style.display !== "none") {
 		  document.getElementById("pagamento").style.display = "none";
-		  } else {
-			  document.getElementById("pagamento").style.display = "block";
-		  }
-		};
+		  } else { 
+			   document.getElementById("pagamento").style.display = "block"; 
+		   } 
+		}; 
+		
 </script>
 	</body>
 </html>

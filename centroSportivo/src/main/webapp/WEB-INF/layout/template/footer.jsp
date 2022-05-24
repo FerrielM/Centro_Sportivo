@@ -2,8 +2,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     
 <footer class="footer mt-auto pt-3 bg-dark container-fluid shadow">
-<div class="row d-flex flex-wrap justify-content-between align-items-center bottom-border-orange g-0">
-    <ul class="right-border-orange px-5 col-4">
+<div class="row d-flex flex-wrap justify-content-between align-items-center bottom-border-jim g-0">
+    <ul class="right-border-jim px-5 col-4">
     <li>
           <a class="text-jim" href="<spring:url value='/index'/>">Home</a>
         </li>
@@ -11,13 +11,13 @@
           <a class="text-jim" href="<spring:url value='/corsi'/>">Corsi</a>
         </li>
         <li>
-          <a class="text-jim" href="<spring:url value='/abbonamenti'/>">Abbonamenti</a>
+          <a class="text-jim" href="<spring:url value='/istruttori'/>">Istruttori</a>
         </li>
         <li>
           <a class="text-jim" href="<spring:url value='/login'/>">Login</a>
         </li>
     </ul>
-    <ul class="right-border-orange ps-5 col-4">
+    <ul class="right-border-jim ps-5 col-4">
      <li>
           <a class="text-jim" href="<spring:url value='/index'/>">Home</a>
         </li>
@@ -25,7 +25,7 @@
           <a class="text-jim" href="<spring:url value='/corsi'/>">Corsi</a>
         </li>
         <li>
-          <a class="text-jim" href="<spring:url value='/abbonamenti'/>">Abbonamenti</a>
+          <a class="text-jim" href="<spring:url value='/istruttori'/>">Istruttori</a>
         </li>
         <li>
           <a class="text-jim" href="<spring:url value='/login'/>">Login</a>
@@ -39,7 +39,7 @@
           <a class="text-jim" href="<spring:url value='/corsi'/>">Corsi</a>
         </li>
         <li>
-          <a class="text-jim" href="<spring:url value='/abbonamenti'/>">Abbonamenti</a>
+          <a class="text-jim" href="<spring:url value='/istruttori'/>">Istruttori</a>
         </li>
         <li>
           <a class="text-jim" href="<spring:url value='/login'/>">Login</a>

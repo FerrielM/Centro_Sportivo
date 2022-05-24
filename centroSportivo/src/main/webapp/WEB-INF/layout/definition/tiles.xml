@@ -23,9 +23,9 @@
 	    <put-attribute name="content" value="/WEB-INF/view/corso.jsp" />
   </definition>
   
-  <definition name="abbonamenti" extends="baseLayout">
-	    <put-attribute name="title" value="Abbonamenti" />
-	    <put-attribute name="content" value="/WEB-INF/view/abbonamenti.jsp" />
+  <definition name="istruttori" extends="baseLayout">
+	    <put-attribute name="title" value="Istruttori" />
+	    <put-attribute name="content" value="/WEB-INF/view/istruttori.jsp" />
   </definition>
   
   <definition name="cart" extends="baseLayout">
@@ -41,6 +41,41 @@
   <definition name="registrazione" extends="baseLayout">
 	    <put-attribute name="title" value="Registrazione" />
 	    <put-attribute name="content" value="/WEB-INF/view/registrazione.jsp" />
+  </definition>
+  
+  <definition name="corsi-tabella" extends="baseLayout">
+	    <put-attribute name="title" value="Elenco Corsi" />
+	    <put-attribute name="content" value="/WEB-INF/view/corsi-tabella.jsp" />
+  </definition>
+  
+  <definition name="corsi-form" extends="baseLayout">
+	    <put-attribute name="title" value="Modifica Corsi" />
+	    <put-attribute name="content" value="/WEB-INF/view/corsi-form.jsp" />
+  </definition>
+  
+  <definition name="istruttori-tabella" extends="baseLayout">
+	    <put-attribute name="title" value="Elenco Istruttori" />
+	    <put-attribute name="content" value="/WEB-INF/view/istruttori-tabella.jsp" />
+  </definition>
+  
+  <definition name="istruttori-form" extends="baseLayout">
+	    <put-attribute name="title" value="Modifica Istruttore" />
+	    <put-attribute name="content" value="/WEB-INF/view/corsi-istruttori.jsp" />
+  </definition>
+  
+  <definition name="ordini-tabella" extends="baseLayout">
+	    <put-attribute name="title" value="Elenco Ordini" />
+	    <put-attribute name="content" value="/WEB-INF/view/corsi-ordini.jsp" />
+  </definition>
+  
+  <definition name="ordini-form" extends="baseLayout">
+	    <put-attribute name="title" value="Modifica Ordine" />
+	    <put-attribute name="content" value="/WEB-INF/view/ordini-form.jsp" />
+  </definition>
+  
+  <definition name="area-riservata" extends="baseLayout">
+	    <put-attribute name="title" value="Area Riservata" />
+	    <put-attribute name="content" value="/WEB-INF/view/area-riservata.jsp" />
   </definition>
   
 </tiles-definitions>
