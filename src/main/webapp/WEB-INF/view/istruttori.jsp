@@ -2,23 +2,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div class="container mt-4 d-flex justify-content-evenly flex-wrap">
+<div class="container-fluid my-4 d-flex justify-content-center align-items-start flex-wrap">
 
-	<c:forEach items="${istruttori}" var="istruttore"> 
-	
-		<div class="card-dark bg-dark shadow mb-4 mx-3 rounded" style="width: 35rem;">
-		  <img src='<c:url value="/static/image/${istruttore.nameImg}"/>' class="card-img-top" alt="">
+	 <c:forEach items="${istruttori}" var="istruttore"> 
+	<div class="card rounded-4 cb1 m-5" style="width: 25rem;">
+		  <img src='<c:url value="/static/images/${istruttore.nameImg}"/>' class="card-img-top" alt="">
 		  <div class="card-body">
-		    <h5 class="card-title">${istruttore.nome} ${istruttore.cognome}</h5>
-		    <p class="card-text">	
+		    <h5 class="card-title text-center text-uppercase my-2">${istruttore.nome} ${istruttore.cognome}</h5>
+		    <p class="card-text text-justify my-2">	
 			 	 ${istruttore.descrizione}
 			</p>
-			<div class="d-flex flex-wrap justify-content-around">
-				<a href="#" class="btn btn-primary shadow">Vedi i Corsi</a>
-			</div>
 		  </div>
 		</div>
-		
-	 </c:forEach> 
+	 </c:forEach>
 </div>

@@ -70,4 +70,14 @@ public class OrdineServiceImpl  implements OrdineService{
 		return dataOrdine;
 	}
 
+	@Override
+	public Ordine veridicaOrdine(String... valori) {
+		
+		return getOrdini()
+				.stream().
+				filter(x -> x.getNome_cliente().equalsIgnoreCase(valori[0]) && 
+						x.getCognome_cliente().equalsIgnoreCase(valori[1]) && 
+						x.getEmail().equalsIgnoreCase(valori[2])).findAny().get();
+	}
+
 }

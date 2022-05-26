@@ -9,7 +9,7 @@
   <div class="container mt-4">
     <div class="mb-4">
 	<h4 class="mb-3 text-white fw-bold text-center">Il tuo carrello</h4>
-      <table class="table table-striped table-hover table-dark my-4 w-75 shadow mx-auto">
+      <table class="table table-dark table-striped my-4 w-75 mx-auto">
       	<tr><th colspan="2">Prodotto</th><th>Prezzo</th></tr>
       	<c:forEach items="${sessionScope.articles}" var="article">
       	<tr>
@@ -19,83 +19,57 @@
       	</c:forEach>
       	<tr><th colspan="2">Prezzo totale</th><th id="#total"></th></tr>	
       </table>
-		        <div class="d-grid gap-2">
-		       	 <button class="btn btn-lg btn-jim fw-bold w-50 shadow mx-auto" id="btn-pagamento" type="submit">Checkout</button>
-		        </div>
+      
+      <div class="d-grid gap-2">
+     	 <button class="btn btn-lg btn-jim fw-bold w-50 shadow mx-auto" id="checkout" type="submit">Checkout</button>
+      </div>
 
 
-		<form id="pagamento" class="card bg-dark w-75 my-5 py-4 m-auto shadow">
+		<form id="pagamento" class="card cb1 w-75 my-5 py-4 m-auto">
 		
-		<div id="paymentNameError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert" style="display:flex">
-		<div>
-			 &nbsp; Attenzione, il nome inserito non è valido! Si prega di riprovare.
-		</div>
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
+			<div id="paymentNameError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert">
+				<div>
+					 &nbsp; Attenzione, il nome inserito non è valido! Si prega di riprovare.
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		    </div>
+		
+		<div id="paymentSurnameError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert">
+				<div>
+					 &nbsp; Attenzione, il cognome inserito non è valido! Si prega di riprovare.
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		    </div>
+		
+		<div id="paymentEmailError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert" style="display:flex">
+				<div>
+					 &nbsp; Attenzione, l'indirizzo e-mail inserito non è valido! Si prega di riprovare.
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		    </div>
 	
-	<div id="paymentCardError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert" style="display:flex">
-		<div>
-			 &nbsp; Attenzione, il numero di carta inserito non è valido! Si prega di riprovare.
-		</div>
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-	
-	<div id="paymentExpiryError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert" style="display:flex">
-		<div>
-			 &nbsp; Attenzione, la data di scadenza inserita non è valida! Si prega di riprovare.
-		</div>
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-	
-	<div id="paymentCVVError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert" style="display:flex">
-		<div>
-			 &nbsp; Attenzione, il codice CVV inserito non è valido! Si prega di riprovare.
-		</div>
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-	
-	<div id="paymentMethodError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center mx-2" role="alert" style="display:flex">
-		<div>
-			 &nbsp; Attenzione, selezionare un metodo di pagamento.
-		</div>
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
-	
-		<h4 class="mb-3 text-white fw-bold text-center">Pagamento</h4>
-				<div class="d-flex justify-content-center w-75 mx-auto">
-			        <div class="btn-group my-3" role="group" aria-label="">
-			          <input type="radio" class="btn-check" name="btnradio" id="credit" autocomplete="off">
-					  <label class="btn btn-outline-info btn-outline-jim text-white fw-bold" for="credit">Carta di credito</label>
-					
-					  <input type="radio" class="btn-check" name="btnradio" id="debit" autocomplete="off">
-					  <label class="btn btn-outline-info btn-outline-jim text-white fw-bold" for="debit">Carta di debito</label>
-					
-					  <input type="radio" class="btn-check" name="btnradio" id="paypal" autocomplete="off">
-					  <label class="btn btn-outline-info btn-outline-jim text-white fw-bold" for="paypal">Paypal</label>
-			        </div>
-				</div>        
-		        <div class="row mx-auto px-5">
+		<h4 class="mb-3 text-white fw-bold text-center pb-3">Pagamento <span class="title-paypal">PayPal</span></h4>     
+		        <div class="row mx-auto px-5 mt-3">
 		          <div class="col-md-6 mb-3">
 		            <label for="nome" class="fw-bold">Nome dell'intestatario</label>
 		            <input type="text" class="form-control text-light bg-dark" id="nome" placeholder="Nome" required>
+		            <div class="form-text">* Campo obbligatorio</div>
 		          </div>
 		          <div class="col-md-6 mb-3">
-		            <label for="numero" class="fw-bold">Numero della carta</label>
-		            <input type="text" class="form-control text-light bg-dark" id="numero" placeholder="Numero carta" minlength="19" maxlength="19" required>
+		            <label for="nome" class="fw-bold">Cognome dell'intestatario</label>
+		            <input type="text" class="form-control text-light bg-dark" id="nome" placeholder="Cognome" required>
+		            <div class="form-text">* Campo obbligatorio</div>
 		          </div>
 		        </div>
-		        <div class="row px-5 mx-auto bottom-border-orange">
-		          <div class="col-md-3 mb-3">
-		            <label for="scadenza" class="fw-bold">Scadenza</label>
-		            <input type="month" class="form-control text-light bg-dark" id="scadenza" placeholder="Scadenza" required>
-		          </div>
-		          <div class="col-md-3 mb-4">
-		            <label for="cvv" class="fw-bold">CVV</label>
-		            <input type="text" class="form-control text-light bg-dark" id="cvv" placeholder="CVV"  minlength="3" maxlength="3" required>
+		        <div class="row px-5 mx-auto bottom-border-jim">
+		        <div class="col-md-6 mb-3">
+		            <label for="scadenza" class="fw-bold">Indirizzo e-mail</label>
+		            <input type="text" class="form-control text-light bg-dark" id="codiceFiscale" placeholder="Indirizzo e-mail" required>
+		            <div class="form-text">* Campo obbligatorio</div>
 		          </div>
 		        </div>
 		        <div class="d-grid gap-2">
-					<div class="wrapper mt-4 align-items-center">
+					<div class="wrapper mt-4 mb-3 align-items-center">
 					  <button id="confirmOrderButton" class="cta align-items-center border-light">
 					    <span class="fw-bold">Conferma ordine</span>
 					    <span>
@@ -116,6 +90,19 @@
 </div>
 
 <script>
- 
+
+document.getElementById("pagamento").style.display = "none";
+document.getElementById("paymentNameError").style.display = "none";
+document.getElementById("paymentSurnameError").style.display = "none";
+document.getElementById("paymentEmailError").style.display = "none";
+
+document.getElementById("checkout").onclick = function () {
+	
+	   if (document.getElementById("pagamento").style.display !== "none") {
+		  document.getElementById("pagamento").style.display = "none";
+		  } else { 
+			   document.getElementById("pagamento").style.display = "block"; 
+		   } 
+		}; 
 
 </script>

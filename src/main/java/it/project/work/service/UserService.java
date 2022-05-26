@@ -13,5 +13,7 @@ public interface UserService {
   
   public boolean convalida(String email, String password);
   
+  public User getUserByCredenziali(String email, String password);
+  
   
 }

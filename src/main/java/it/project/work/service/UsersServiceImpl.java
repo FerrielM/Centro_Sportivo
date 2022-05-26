@@ -1,9 +1,12 @@
 package it.project.work.service;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
 
 import it.project.work.dao.UserDao;
 import it.project.work.model.User;
@@ -47,4 +50,15 @@ public class UsersServiceImpl implements UserService{
 					.equalsIgnoreCase(email) && x.getPassword().equals(password));	
 	}
 
+	@Override
+	public User getUserByCredenziali(String email, String password) {
+		
+		Predicate<User> condizione;
+		
+		condizione = x -> x.getEmail().equalsIgnoreCase(email) && x.getPassword().equals(password);
+
+		return	getUsers()
+				.stream().filter(condizione).findAny().get();
+	}
+	
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     
-<footer class="footer mt-auto pt-3 bg-dark container-fluid shadow">
+<footer class="footer bg-gradient mt-auto pt-3 cb1 container-fluid shadow">
 <div class="row d-flex flex-wrap justify-content-between align-items-center bottom-border-jim g-0">
     <ul class="right-border-jim px-5 col-4">
     <li>

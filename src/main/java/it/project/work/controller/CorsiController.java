@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.project.work.model.Prodotto;
 import it.project.work.service.ProdottoService;
@@ -16,7 +17,7 @@ import it.project.work.service.ProdottoService;
 public class CorsiController {
 	
 	@Autowired
-	private ProdottoService prodoService;
+	private ProdottoService prodService;
 	
 	@GetMapping
 	public String getPage(Model model) {
@@ -25,11 +26,11 @@ public class CorsiController {
 		
 		List<Prodotto> corsi;
 		
-		corsi = prodoService.getCorsi();
+		corsi = prodService.getCorsi();
 		
 		for(int i = 0; i < corsi.size();i++) {
 			
-			corsi.set(i,prodoService.checkProdotto(corsi.get(i))); 
+			corsi.set(i,prodService.checkProdotto(corsi.get(i))); 
 			
 			
 		}
@@ -37,6 +38,21 @@ public class CorsiController {
 		model.addAttribute("corsi", corsi);
 		
 		return "corsi";
+		
+	}
+	
+	@GetMapping("/viewcorso")
+	public String viewCorso(@RequestParam("id") String id, Model model) {
+		
+		Prodotto p = prodService.getCorsi()
+				.stream()
+				.filter(x -> x.getId_prodotto()==Integer.valueOf(id)).findAny().get();
+		
+		model.addAttribute("corso", p);
+		
+		
+		return "corso";
+		
 		
 	}
 

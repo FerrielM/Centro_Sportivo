@@ -18,4 +18,6 @@ public interface OrdineService {
 	public void updateOrdine(Ordine ordine);
 	
 	public Date formatData(String data);
+	
+	public Ordine veridicaOrdine(String... valori);
 }

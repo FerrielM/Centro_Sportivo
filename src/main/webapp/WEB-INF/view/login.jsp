@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <div class="container">
-  <div class="card bg-dark w-75 my-5 mx-auto shadow">
+  <div class="card cb1 w-75 my-5 mx-auto shadow">
   <div class="card-body">
     <h5 class="card-title text-center mb-3">Login</h5>
     <div id="loginError" class ="alert alert-danger alert-dismissible fade show align-items-center justify-content-center" role="alert" style="display:flex">
@@ -19,15 +19,17 @@
 	        <div class="col-md-6 col-12 p-2">
 	        	<label class="d-none d-md-block">E-mail</label>
 	            <input type="email" name="email" class="form-control bg-dark text-white" placeholder="Indirizzo e-mail">
+	            <div class="form-text">* Campo obbligatorio</div>
 	        </div>
 	        <div class="col-md-6 col-12 p-2">
 	        	<label class="d-none d-md-block">Password</label>
 	            <input type="password" name="password" class="form-control bg-dark text-white" placeholder="Password">
+	            <div class="form-text">* Campo obbligatorio</div>
 	        </div>
 	        </div>
 		    	<button class="btn btn-lg btn-jim shadow mt-4 mb-2 w-25 d-block mx-auto">Login</button>
 	  </form>
 	</div>
   </div>
-  <h5 class="text-center"><span class="badge bg-dark">Non hai ancora un account? <a href="<spring:url value="/registrazione"/>">Registrati qui</a>!</span></h5>
+  <h5 class="text-center"><span class="badge cb1">Non hai ancora un account? <a href="<spring:url value="/registrazione"/>">Registrati qui</a>!</span></h5>
   </div>

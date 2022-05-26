@@ -4,29 +4,24 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div class="container mt-4 d-flex justify-content-evenly flex-wrap">
+<%-- ${corso.img} --%>
+<div class="container-fluid my-4 d-flex justify-content-center align-items-start flex-wrap">
 
-	<c:forEach items="${corsi}" var="corso"> 
-	
-		<div class="card-dark bg-dark shadow mb-4 mx-3 rounded" style="width: 35rem;">
-		  <img src='<c:url value="/static/image/${corso.img}"/>' class="card-img-top" alt="">
+	 <c:forEach items="${corsi}" var="corso"> 
+		<div class="card rounded-4 cb1 m-5" style="width: 25rem; min-height:auto;">
+		  <img src='<c:url value="/static/images/${corso.img}"/>' class="card-img-top" alt="">
 		  <div class="card-body">
-		    <h5 class="card-title">${corso.nome}</h5>
-		    <p class="card-text">	
+		    <h5 class="card-title text-center text-uppercase">${corso.nome}</h5>
+		    <p class="card-text my-3">	
 			 	 ${corso.descrizione}
 			</p>
-			<p class="card-text">	
-			 <fmt:formatNumber value="${corso.prezzo}" maxFractionDigits="2" minFractionDigits="2" type="currency" currencyCode="EUR" currencySymbol="€"/>
-			</p>
-			<div class="d-flex flex-wrap justify-content-around">
-				<a href ='<spring:url value="cart"/>?id=${corso.id_prodotto}' class="btn btn-primary shadow" >Aggiungi al carrello</a>
-				<p>&nbsp;</p>
-			    <%-- <p class="card-text fw-lighter fst-italic fs-6 mt-2">	
-				 	 Ancora ${corso.quantity} posti disponibili
-				</p> --%>
+			<div class="d-flex flex-wrap justify-content-center align-self-end" >
+				<div class="text-center mt-3 mx-2">
+					<a href ='<spring:url value="corsi/viewcorso"/>?id=${corso.id_prodotto}' class="btn btn-jim shadow">Mostra Corso</a>
+				</div>
 			</div>
 		  </div>
 		</div>
-		
-	 </c:forEach> 
+	 </c:forEach> 	
+	 
 </div>

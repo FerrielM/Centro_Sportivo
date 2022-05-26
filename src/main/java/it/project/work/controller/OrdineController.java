@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import it.project.work.model.Ordine;
+import it.project.work.model.User;
 import it.project.work.service.OrdineService;
 
 @Controller
@@ -24,8 +25,6 @@ public class OrdineController {
 		Ordine ordini = new Ordine();
 		
 		ordini.setData_acquisto(ordineService.formatData("2022-05-12"));
-		
-		ordini.setNome_cliente("PrimoCliente");
 		
 		ordini.setTotaleOrdine(30.00);
 		

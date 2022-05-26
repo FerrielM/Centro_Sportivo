@@ -15,6 +15,7 @@ import it.project.work.model.Prodotto;
 import it.project.work.service.IstruttoreService;
 import it.project.work.service.ProdottoService;
 
+// http://localhost:8080/centro_sportivo
 @Controller
 @RequestMapping
 (path={"/","/home","/index"})

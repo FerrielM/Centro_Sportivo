@@ -26,7 +26,7 @@ public class OrdineDaoImpl implements OrdiniDao {
 	@Override
 	public List<Ordine> getOrdini() {
 		
-		return em.createQuery("SELECT o FROM Ordini o ").getResultList();
+		return em.createQuery("SELECT o FROM Ordine o ").getResultList();
 	}
 
 	@Override

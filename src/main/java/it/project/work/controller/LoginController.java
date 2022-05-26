@@ -61,13 +61,12 @@ public class LoginController {
 			@RequestParam("email") String email,
 			@RequestParam("password") String password,
 			HttpSession session) {
-		
-		System.out.println(email + "" +  password);
-		
-		
+
 		if (userService.convalida(email, password)) {
 			
 			session.setAttribute("isLoggato", true);
+			
+			session.setAttribute("user", userService.getUserByCredenziali(email, password));
 			
 			return "redirect:/index";
 			

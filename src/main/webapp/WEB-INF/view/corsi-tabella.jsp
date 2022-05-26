@@ -6,12 +6,14 @@
 <div class="container-fluid">
 	<table class="table table-dark w-75 mx-auto my-4">
 		<thead>
+		<tr>
 			<th>Corso:</th>
 			<th>Sala:</th>
 			<th>Istruttore:</th>
 			<th>Date:</th>
 			<th>Orario:</th>
 			<th>&nbsp;</th>
+		</tr>
 		</thead>
 		<tbody>
 			<%-- <c:forEach items="${corsi}" var="corso"> --%>

@@ -25,6 +25,12 @@ public class Ordine {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_ordine;
 	
+	@Column(name = "nome_cliente")
+	private String nome_cliente;
+	
+	@Column(name = "cognome_cliente")
+	private String cognome_cliente;
+	
 	@Column(name="totale_ordine")
 	private double totaleOrdine;
 	
@@ -32,10 +38,9 @@ public class Ordine {
 	@Temporal(TemporalType.DATE)
 	private Date data_acquisto;
 	
-	@Column(name = "nome_cliente")
-	private String nome_cliente;
-	
-	
+	@Column(name = "email")
+	private String email;
+
 	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable
 		( 
@@ -44,39 +49,61 @@ public class Ordine {
 			inverseJoinColumns = @JoinColumn(name = "id_prodotto", referencedColumnName = "id_prodotto")
 		)
 	private List<Prodotto> prodotti;
-	
+
 	public int getId_ordine() {
 		return id_ordine;
 	}
+
 	public void setId_ordine(int id_ordine) {
 		this.id_ordine = id_ordine;
 	}
-	public double getTotaleOrdine() {
-		return totaleOrdine;
-	}
-	public void setTotaleOrdine(Double totaleOrdine) {
-		this.totaleOrdine = totaleOrdine;
-	}
+
 	public String getNome_cliente() {
 		return nome_cliente;
 	}
+
 	public void setNome_cliente(String nome_cliente) {
 		this.nome_cliente = nome_cliente;
 	}
+
+	public String getCognome_cliente() {
+		return cognome_cliente;
+	}
+
+	public void setCognome_cliente(String cognome_cliente) {
+		this.cognome_cliente = cognome_cliente;
+	}
+
+	public double getTotaleOrdine() {
+		return totaleOrdine;
+	}
+
+	public void setTotaleOrdine(double totaleOrdine) {
+		this.totaleOrdine = totaleOrdine;
+	}
+
 	public Date getData_acquisto() {
 		return data_acquisto;
 	}
+
 	public void setData_acquisto(Date data_acquisto) {
 		this.data_acquisto = data_acquisto;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public List<Prodotto> getProdotti() {
 		return prodotti;
 	}
+
 	public void setProdotti(List<Prodotto> prodotti) {
 		this.prodotti = prodotti;
 	}
-	
-	
-	
 
 }

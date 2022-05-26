@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,8 +22,11 @@ public class CarrelloController {
 	private ProdottoService prodService;
 	
 	
+	@SuppressWarnings("unchecked")
 	@GetMapping
-	public String getPage(@RequestParam(name = "id", required= false) String id, HttpSession session) {
+	public String getPage(@RequestParam(name = "id", required= false) String id,
+							@RequestParam(name = "path", required = false) String path, 
+							HttpSession session, Model model) {
 		
 		Prodotto p; 
 		
@@ -57,8 +61,20 @@ public class CarrelloController {
 				session.setAttribute("articles", articles);
 			}
 			
+			return "cart";
+			
 		}
 		
-		return "corsi";
+			if (path == null) {
+			
+			return "redirect:/corsi";
+			
+		}else {
+			
+			model.addAttribute("id", id);
+			
+			return "redirect:/" + path;
+		}
+		
 	}
 }

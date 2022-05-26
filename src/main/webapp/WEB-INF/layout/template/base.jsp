@@ -10,13 +10,15 @@
 	<link rel="icon" type="image/svg" href="static/images/dribbble.svg">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/style.css" rel="stylesheet">
+	<link href="http://fonts.cdnfonts.com/css/lean-foreword" rel="stylesheet">
+	<link href='<c:url value="/static/css/style.css"/>'  rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="static/javascript/script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	</head>
 	
-	<body class="d-flex flex-column h-100 text-light g-0 background">
+	<body class="d-flex flex-column h-100 text-light background">
 		<div class="container-fluid g-0">
 			<tiles:insertAttribute name="header"/>
 			<tiles:insertAttribute name="content"/>
@@ -24,19 +26,5 @@
 		
 		<tiles:insertAttribute name="footer"/>
 
-
-<script type="text/javascript">
-
- document.getElementById("pagamento").style.display = "none";
- document.getElementById('btn-pagamento').onclick = function () {
-	
-	   if (document.getElementById("pagamento").style.display !== "none") {
-		  document.getElementById("pagamento").style.display = "none";
-		  } else { 
-			   document.getElementById("pagamento").style.display = "block"; 
-		   } 
-		}; 
-		
-</script>
 	</body>
 </html>
